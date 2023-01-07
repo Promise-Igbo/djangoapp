@@ -78,7 +78,12 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME':os.getenv('flexibleserverdb'),
+        'USER':os.getenv('swankywasp9'),
+        'PASSWORD':os.getenv('f0MlotIT60DzPzlN_bMoUw'),
+        'HOST':os.getenv('server054728202.postgres.database.azure.com'),
+        'PORT':'5432',
+        'OPTIONS': {'sslmode': 'require'}
     }
 }
 
